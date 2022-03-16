@@ -12,8 +12,8 @@ class ExampleSpec extends BaseSpec {
         when: "User clicks Practice Form Link"
             formsPage.clickPracticeFormLink()
         then: "Verify User is on Practice Form Page"
-
             at PracticeFormPage
+
     }
 
     void "fillOutFormTest"() {
