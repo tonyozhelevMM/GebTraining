@@ -20,6 +20,8 @@ class ExampleSpec extends BaseSpec {
             navigateToPracticeFormPage()
             PracticeFormPage practiceFormPage = at PracticeFormPage
         when: "Fill out the form"
+
+
             sleep(30)
         then: "Verify something"
             sleep(30)
