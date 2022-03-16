@@ -13,7 +13,6 @@ class ExampleSpec extends BaseSpec {
             formsPage.clickPracticeFormLink()
         then: "Verify User is on Practice Form Page"
             at PracticeFormPage
-
     }
 
     void "fillOutFormTest"() {
