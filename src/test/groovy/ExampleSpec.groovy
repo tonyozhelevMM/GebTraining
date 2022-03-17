@@ -20,8 +20,16 @@ class ExampleSpec extends BaseSpec {
             navigateToPracticeFormPage()
             PracticeFormPage practiceFormPage = at PracticeFormPage
         when: "Fill out the form"
-            sleep(30)
-        then: "Verify something"
+            practiceFormPage.fillInFirstNameField("Panayot")
+            practiceFormPage.fillInLastName("Yanev")
+            practiceFormPage.fillInEmail("panayot.yanev@mentormate.com")
+            practiceFormPage.fillInYourGender()
+            practiceFormPage.fillInPhoneNumber("0895464310")
+            practiceFormPage.fillInDateOfBirth("06/18/2000")
+            practiceFormPage.fillInYourHobbies()
+            practiceFormPage.fillInYouCurrentAddress("Bulgaria, Burgas, Izgrev")
+            practiceFormPage.clickSubmitButton()
+        then: "Thank user for submitting the form"
             sleep(30)
     }
 }
