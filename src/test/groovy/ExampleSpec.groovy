@@ -28,8 +28,10 @@ class ExampleSpec extends BaseSpec {
             practiceFormPage.fillInDateOfBirth("06/18/2000")
             practiceFormPage.fillInYourHobbies()
             practiceFormPage.fillInYouCurrentAddress("Bulgaria, Burgas, Izgrev")
+            practiceFormPage.selectYourState("NCR")
+            practiceFormPage.selectYourCity("Delhi")
             practiceFormPage.clickSubmitButton()
         then: "Thank user for submitting the form"
-            sleep(30)
+            practiceFormPage.submitMessageIsDisplayed()
     }
 }

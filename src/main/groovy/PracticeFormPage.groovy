@@ -2,11 +2,6 @@ import geb.Page
 import geb.module.DateInput
 import org.openqa.selenium.By
 import org.openqa.selenium.Keys
-import org.openqa.selenium.WebElement
-import org.openqa.selenium.support.ui.ExpectedConditions
-import org.openqa.selenium.support.ui.WebDriverWait
-
-import java.time.Duration
 
 class PracticeFormPage extends Page {
 
@@ -29,6 +24,7 @@ class PracticeFormPage extends Page {
         stateSelector                {$(By.xpath("//div[text() = 'Select State']"))}
         citySelector                 {$(By.id("city"))}
         submitButton                 {$(By.id("submit"))}
+        thankYouMessage              {$(By.id("example-modal-sizes-title-lg"))}
     }
 
     static url = "https://demoqa.com/automation-practice-form"
@@ -67,20 +63,22 @@ class PracticeFormPage extends Page {
     }
 
     void selectYourState(String state){
-        assert waitFor {stateSelector}.isDisplayed()
-        stateSelector.click()
         stateSelector << state
         stateSelector << Keys.ENTER
+        stateSelector << Keys.TAB
     }
 
     void selectYourCity(String city){
-        assert citySelector.isDisplayed()
-        citySelector.click()
         citySelector << city
         citySelector << Keys.ENTER
+        citySelector << Keys.TAB
     }
 
     void clickSubmitButton(){
         submitButton.click()
+    }
+
+    void submitMessageIsDisplayed(){
+        assert thankYouMessage.isDisplayed()
     }
 }
