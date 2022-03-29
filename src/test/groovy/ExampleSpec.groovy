@@ -20,10 +20,18 @@ class ExampleSpec extends BaseSpec {
             navigateToPracticeFormPage()
             PracticeFormPage practiceFormPage = at PracticeFormPage
         when: "Fill out the form"
-
-
             sleep(30)
         then: "Verify something"
             sleep(30)
+    }
+
+    void "selectRandomColorFromDropdownMenu"(){
+        given: "User is on the Select Menu Page"
+            navigateToSelectMenuPage()
+            SelectMenuPage selectMenuPage = at SelectMenuPage
+        when:
+            selectMenuPage.chooseRandomNumber()
+        then:
+            sleep(3000)
     }
 }
