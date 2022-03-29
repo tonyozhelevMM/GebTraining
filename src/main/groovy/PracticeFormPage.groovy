@@ -12,18 +12,17 @@ class PracticeFormPage extends Page {
 
     static content = {
         formHeader                   {$("h5")}
-        firstNameField               {$(By.id("firstName"))}
-        lastNameField                {$(By.id("lastName"))}
-        emailField                   {$(By.id("userEmail"))}
+        firstNameField               {$("#firstName")}
+        lastNameField                {$("#lastName")}
+        emailField                   {$("#userEmail")}
         maleRadioButton              {$(By.xpath("//label[text() = 'Male']"))}
-        userPhoneNumberField         {$(By.id("userNumber"))}
-        dateOfBirthField             {$(By.id("dateOfBirthInput")).module(DateInput)}
+        userPhoneNumberField         {$("#userNumber")}
+        dateOfBirthField             {$("#dateOfBirthInput").module(DateInput)}
         musicCheckbox                {$(By.xpath("//label[text() = 'Music']"))}
-        currentAddressField          {$(By.id("currentAddress"))}
-        stateCityWrapper             {$(By.id("stateCity-wrapper"))}
-        stateSelector                {$(By.xpath("//div[text() = 'Select State']"))}
-        citySelector                 {$(By.id("city"))}
-        submitButton                 {$(By.id("submit"))}
+        currentAddressField          {$("#currentAddress")}
+        stateSelector                {$("#react-select-3-input")}
+        citySelector                 {$("#react-select-4-input")}
+        submitButton                 {$("#submit")}
         thankYouMessage              {$(By.id("example-modal-sizes-title-lg"))}
     }
 
@@ -75,7 +74,7 @@ class PracticeFormPage extends Page {
     }
 
     void clickSubmitButton(){
-        submitButton.click()
+        submitButton << Keys.ENTER
     }
 
     void submitMessageIsDisplayed(){
