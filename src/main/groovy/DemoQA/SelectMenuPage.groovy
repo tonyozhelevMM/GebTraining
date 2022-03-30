@@ -1,3 +1,5 @@
+package DemoQA
+
 import geb.Page
 import org.openqa.selenium.By
 

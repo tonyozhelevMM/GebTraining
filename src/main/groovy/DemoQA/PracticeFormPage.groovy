@@ -1,3 +1,5 @@
+package DemoQA
+
 import geb.Page
 
 class PracticeFormPage extends Page {
