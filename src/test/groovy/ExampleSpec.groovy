@@ -5,6 +5,7 @@ import DemoQA.FormsPage
 import DemoQA.PracticeFormPage
 import DemoQA.SelectMenuPage
 import IFrame.IFramePage
+import TablePress.TablePress
 
 class ExampleSpec extends BaseSpec {
 
@@ -83,7 +84,20 @@ class ExampleSpec extends BaseSpec {
             iFramePage.switchToGlobalSQAFrame()
             iFramePage.searchForGebBookInSearchBar()
             iFramePage.moveToFacebookButtonAndClickIt()
-            //iFramePage.switchToFacebookTab()
+            iFramePage.switchToFacebookTab()
+            iFramePage.printFacebookPageName()
+        then:
+            sleep(3000)
+    }
+
+    void "TablePress"() {
+        given:
+            navigateToTablePress()
+            TablePress tablePress = at TablePress
+        when:
+            tablePress.printTablePressInformation()
+            tablePress.printTableRow()
+            tablePress.printLastNames()
         then:
             sleep(3000)
     }
