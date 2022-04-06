@@ -8,7 +8,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions
 
 class IFramePage extends Page{
     static at = {
-        getDriver().getCurrentUrl() == url
         pageHeading.isDisplayed()
         pageHeading.text() == "Frames And Windows"
     }
@@ -27,8 +26,8 @@ class IFramePage extends Page{
         getDriver().switchTo().frame("globalSqa")
     }
 
-    void searchForGebBookInSearchBar() {
-        searchBar << "Geb"
+    void searchForGebBookInSearchBar(String input) {
+        searchBar << input
         searchButton.click()
     }
 
@@ -44,10 +43,11 @@ class IFramePage extends Page{
         getDriver().switchTo().window(tabs.get(1))
     }
 
-    void printFacebookPageName() {
+    void assertFacebookPageName() {
         waitFor {
             ExpectedConditions.visibilityOf(facebookPageName as WebElement)
         }
-        println(facebookPageName.text())
+
+        assert facebookPageName.text() == "Globalsqa"
     }
 }

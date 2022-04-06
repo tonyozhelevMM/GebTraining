@@ -17,27 +17,11 @@ class BaseSpec extends GebReportingSpec {
         driver.quit()
     }
 
+    void navigateToPage(String url) {
+        driver.get(url)
+    }
+
     void navigateToPracticeFormPage() {
         driver.get(PracticeFormPage.url)
-    }
-
-    void navigateToSelectMenuPage() {
-        driver.get(SelectMenuPage.url)
-    }
-
-    void navigateToAlertsPage() {
-        driver.get(AlertsFramesAndWindowsPage.url)
-    }
-
-    void navigateToBrowserWindowsPage() {
-        driver.get(BrowserWindowsPage.url)
-    }
-
-    void navigateToIFramePage() {
-        driver.get(IFramePage.url)
-    }
-
-    void navigateToTablePress() {
-        driver.get(TablePress.url)
     }
 }

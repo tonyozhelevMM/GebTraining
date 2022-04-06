@@ -19,12 +19,12 @@ class TablePress extends Page{
 
     static url = "https://tablepress.org/demo"
 
-    void printTablePressInformation() {
-        println(tablePressInfo.text())
+    void assertTablePressInformationIsDisplayed() {
+        assert tablePressInfo.text() != null
     }
 
-    void printTableRow() {
-        println(tableRows.text())
+    void assertTableRowIsNotEmpty() {
+        assert tableRows.text() != null
     }
 
     void printLastNames() {

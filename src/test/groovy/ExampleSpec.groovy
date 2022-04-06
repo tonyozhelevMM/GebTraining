@@ -11,7 +11,7 @@ class ExampleSpec extends BaseSpec {
 
     void "navigateToPracticeFormPageTest"() {
         given: "User is on Base Page"
-        BasePage basePage = at BasePage
+            BasePage basePage = at BasePage
         when: "User clicks the Form Link"
             basePage.clickFormLink()
         then: "Verify User is on Forms Page"
@@ -34,7 +34,7 @@ class ExampleSpec extends BaseSpec {
 
     void "selectRandomColorFromDropdownMenu"(){
         given: "User is on the Select Menu Page"
-            navigateToSelectMenuPage()
+            navigateToPage(SelectMenuPage.url)
         SelectMenuPage selectMenuPage = at SelectMenuPage
         when:
             selectMenuPage.chooseRandomNumber()
@@ -44,61 +44,58 @@ class ExampleSpec extends BaseSpec {
 
     void "clickAndAcceptConfirmButtonAndAcceptAlert"() {
         given:
-            navigateToAlertsPage()
+            navigateToPage(AlertsFramesAndWindowsPage.url)
             AlertsFramesAndWindowsPage alertsFramesAndWindowsPage = at AlertsFramesAndWindowsPage
         when:
             alertsFramesAndWindowsPage.clickConfirmButton()
             alertsFramesAndWindowsPage.acceptPopUpAlert()
         then:
-            sleep(3000)
+            alertsFramesAndWindowsPage.youAcceptedTheAlert()
     }
 
     void "clickAndAcceptConfirmButtonAndDismissAlert"() {
         given:
-            navigateToAlertsPage()
+            navigateToPage(AlertsFramesAndWindowsPage.url)
             AlertsFramesAndWindowsPage alertsFramesAndWindowsPage = at AlertsFramesAndWindowsPage
         when:
             alertsFramesAndWindowsPage.clickConfirmButton()
             alertsFramesAndWindowsPage.dismissPopUpAlert()
         then:
-            sleep(3000)
+            alertsFramesAndWindowsPage.youDismissedTheAlert()
     }
 
     void "clickNewWindowButtonAndPrintTextFromNewWindow"() {
         given:
-            navigateToBrowserWindowsPage()
+            navigateToPage(BrowserWindowsPage.url)
             BrowserWindowsPage browserWindowsPage = at BrowserWindowsPage
         when:
             browserWindowsPage.clickNewWindowButton()
             browserWindowsPage.switchToNewWindow()
-            browserWindowsPage.printTextFromNewWindow()
         then:
-            sleep(3000)
+            browserWindowsPage.assertTextFromNewWindowIsCorrect()
     }
 
     void "IFrameTest"() {
         given:
-            navigateToIFramePage()
+            navigateToPage(IFramePage.url)
             IFramePage iFramePage = at IFramePage
         when:
             iFramePage.switchToGlobalSQAFrame()
-            iFramePage.searchForGebBookInSearchBar()
+            iFramePage.searchForGebBookInSearchBar("Geb")
             iFramePage.moveToFacebookButtonAndClickIt()
             iFramePage.switchToFacebookTab()
-            iFramePage.printFacebookPageName()
         then:
-            sleep(3000)
+            iFramePage.assertFacebookPageName()
     }
 
     void "TablePress"() {
         given:
-            navigateToTablePress()
+            navigateToPage(TablePress.url)
             TablePress tablePress = at TablePress
         when:
-            tablePress.printTablePressInformation()
-            tablePress.printTableRow()
             tablePress.printLastNames()
         then:
-            sleep(3000)
+            tablePress.assertTablePressInformationIsDisplayed()
+            tablePress.assertTableRowIsNotEmpty()
     }
 }

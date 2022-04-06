@@ -4,7 +4,6 @@ import geb.Page
 
 class BrowserWindowsPage extends Page{
     static at = {
-        getDriver().getCurrentUrl() == url
         mainHeader.isDisplayed()
         mainHeader.text() == "Browser Windows"
     }
@@ -26,7 +25,7 @@ class BrowserWindowsPage extends Page{
         getDriver().switchTo().window(windows.get(1))
     }
 
-    void printTextFromNewWindow() {
-        println(sampleTextFromNewWindow.text())
+    void assertTextFromNewWindowIsCorrect() {
+        assert sampleTextFromNewWindow.text() == "This is a sample page"
     }
 }

@@ -6,7 +6,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions
 
 class AlertsFramesAndWindowsPage extends Page {
     static at = {
-        getDriver().getCurrentUrl() == url
         mainHeader.isDisplayed()
         mainHeader.text() == "Alerts"
     }
@@ -14,6 +13,7 @@ class AlertsFramesAndWindowsPage extends Page {
     static content = {
         mainHeader          {$(".main-header")}
         confirmButton       {$("#confirmButton")}
+        afterAlertText      {$("#confirmResult")}
     }
 
     static url = "https://demoqa.com/alerts"
@@ -22,19 +22,28 @@ class AlertsFramesAndWindowsPage extends Page {
         confirmButton.click()
     }
 
-    void acceptPopUpAlert() {
+    Alert switchToAlert() {
         waitFor() {
             ExpectedConditions.alertIsPresent()
         }
-        Alert alert = getDriver().switchTo().alert()
+        return getDriver().switchTo().alert()
+    }
+
+    void acceptPopUpAlert() {
+        Alert alert = switchToAlert()
         alert.accept()
     }
 
     void dismissPopUpAlert() {
-        waitFor() {
-            ExpectedConditions.alertIsPresent()
-        }
-        Alert alert = getDriver().switchTo().alert()
+        Alert alert = switchToAlert()
         alert.dismiss()
+    }
+
+    boolean youAcceptedTheAlert() {
+        return afterAlertText.isDisplayed() && afterAlertText.text() == "You selected Ok"
+    }
+
+    boolean youDismissedTheAlert() {
+        return afterAlertText.isDisplayed() && afterAlertText.text() == "You selected Cancel"
     }
 }
