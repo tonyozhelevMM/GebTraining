@@ -8,8 +8,6 @@ class SelectMenuPage extends Page{
         mainHeader.isDisplayed()
         dropdownMenu.isDisplayed()
         mainHeader.text() == "Select Menu"
-
-        getDriver().getCurrentUrl() == url
     }
 
     static content = {
@@ -19,7 +17,7 @@ class SelectMenuPage extends Page{
 
     static url = "https://demoqa.com/select-menu"
 
-    void chooseRandomNumber() {
+    void chooseRandomColor() {
         Random random = new Random()
         int randomNumber = random.nextInt(10) + 1
 

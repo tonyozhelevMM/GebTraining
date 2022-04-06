@@ -20,8 +20,4 @@ class BaseSpec extends GebReportingSpec {
     void navigateToPage(String url) {
         driver.get(url)
     }
-
-    void navigateToPracticeFormPage() {
-        driver.get(PracticeFormPage.url)
-    }
 }

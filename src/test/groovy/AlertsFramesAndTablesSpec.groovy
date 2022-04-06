@@ -7,7 +7,7 @@ import DemoQA.SelectMenuPage
 import IFrame.IFramePage
 import TablePress.TablePress
 
-class ExampleSpec extends BaseSpec {
+class AlertsFramesAndTablesSpec extends BaseSpec {
 
     void "navigateToPracticeFormPageTest"() {
         given: "User is on Base Page"
@@ -15,7 +15,7 @@ class ExampleSpec extends BaseSpec {
         when: "User clicks the Form Link"
             basePage.clickFormLink()
         then: "Verify User is on Forms Page"
-        FormsPage formsPage = at FormsPage
+            FormsPage formsPage = at FormsPage
         when: "User clicks Practice Form Link"
             formsPage.clickPracticeFormLink()
         then: "Verify User is on Practice Form Page"
@@ -24,7 +24,7 @@ class ExampleSpec extends BaseSpec {
 
     void "fillOutFormTest"() {
         given: "User is on the Practice Form Page"
-            navigateToPracticeFormPage()
+            navigateToPage(PracticeFormPage.url)
             PracticeFormPage practiceFormPage = at PracticeFormPage
         when: "Fill out the form"
             sleep(30)
@@ -35,9 +35,9 @@ class ExampleSpec extends BaseSpec {
     void "selectRandomColorFromDropdownMenu"(){
         given: "User is on the Select Menu Page"
             navigateToPage(SelectMenuPage.url)
-        SelectMenuPage selectMenuPage = at SelectMenuPage
+            SelectMenuPage selectMenuPage = at SelectMenuPage
         when:
-            selectMenuPage.chooseRandomNumber()
+            selectMenuPage.chooseRandomColor()
         then:
             sleep(3000)
     }
