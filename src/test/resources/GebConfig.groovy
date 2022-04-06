@@ -10,6 +10,6 @@ driver = {
 
 atCheckWaiting = true
 
-baseUrl = "https://demoqa.com/"
+baseUrl = "https://www.amazon.com/"
 
 reportsDir = "target/geb-reports"

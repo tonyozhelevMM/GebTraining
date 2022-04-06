@@ -1,3 +1,5 @@
+package demoqa
+
 import geb.Page
 import geb.waiting.Wait
 import org.openqa.selenium.By

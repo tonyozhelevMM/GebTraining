@@ -1,14 +1,19 @@
+package demoQATests
 
+import amazon.AmazonBasePage
+import demoqa.BasePage
+import demoqa.FormsPage
+import demoqa.PracticeFormPage
 
 class ExampleSpec extends BaseSpec {
 
     void "navigateToPracticeFormPageTest"() {
         given: "User is on Base Page"
-            BasePage basePage = at BasePage
+        BasePage basePage = at BasePage
         when: "User clicks the Form Link"
             basePage.clickFormLink()
         then: "Verify User is on Forms Page"
-            FormsPage formsPage = at FormsPage
+        FormsPage formsPage = at FormsPage
         when: "User clicks Practice Form Link"
             formsPage.clickPracticeFormLink()
         then: "Verify User is on Practice Form Page"

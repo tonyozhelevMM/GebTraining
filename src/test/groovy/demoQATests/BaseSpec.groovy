@@ -1,3 +1,6 @@
+package demoQATests
+
+import demoqa.PracticeFormPage
 import geb.spock.GebReportingSpec
 
 class BaseSpec extends GebReportingSpec {
@@ -13,5 +16,9 @@ class BaseSpec extends GebReportingSpec {
 
     void navigateToPracticeFormPage(){
         driver.get(PracticeFormPage.url)
+    }
+
+    void navigateToPage(String url) {
+        driver.get(url)
     }
 }

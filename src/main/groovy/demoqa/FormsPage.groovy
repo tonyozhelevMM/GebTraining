@@ -1,3 +1,5 @@
+package demoqa
+
 import org.openqa.selenium.By
 class FormsPage extends BasePage {
 

@@ -1,3 +1,5 @@
+package demoqa
+
 import geb.Page
 import geb.module.DateInput
 import org.openqa.selenium.By
