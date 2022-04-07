@@ -1,4 +1,4 @@
-package demoQATests
+package regularlyUsed
 
 import geb.spock.GebReportingSpec
 

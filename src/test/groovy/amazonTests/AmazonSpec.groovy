@@ -4,7 +4,7 @@ import amazon.AmazonBasePage
 import amazon.AmazonProfilePage
 import amazon.AmazonSignInPasswordPage
 import amazon.AmazonSignInPhoneOrEmailPage
-import demoQATests.BaseSpec
+import regularlyUsed.BaseSpec
 
 class AmazonSpec extends BaseSpec {
     void "SignInToAmazonAndChangeProfileAndCoverPhotos"() {

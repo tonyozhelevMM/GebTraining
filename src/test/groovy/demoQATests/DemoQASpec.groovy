@@ -3,6 +3,7 @@ package demoQATests
 import demoqa.BasePage
 import demoqa.FormsPage
 import demoqa.PracticeFormPage
+import regularlyUsed.BaseSpec
 
 class DemoQASpec extends BaseSpec {
 
