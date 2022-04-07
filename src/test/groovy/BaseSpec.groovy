@@ -13,7 +13,7 @@ class BaseSpec extends GebReportingSpec {
         browser.go()
     }
 
-    void cleanup() {
+    void cleanupSpec() {
         driver.quit()
     }
 

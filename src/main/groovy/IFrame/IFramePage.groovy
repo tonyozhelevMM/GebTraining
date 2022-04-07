@@ -26,7 +26,7 @@ class IFramePage extends Page{
         getDriver().switchTo().frame("globalSqa")
     }
 
-    void searchForGebBookInSearchBar(String input) {
+    void searchForASpecificBook(String input) {
         searchBar << input
         searchButton.click()
     }

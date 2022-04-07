@@ -81,7 +81,7 @@ class AlertsFramesAndTablesSpec extends BaseSpec {
             IFramePage iFramePage = at IFramePage
         when:
             iFramePage.switchToGlobalSQAFrame()
-            iFramePage.searchForGebBookInSearchBar("Geb")
+            iFramePage.searchForASpecificBook("Geb")
             iFramePage.moveToFacebookButtonAndClickIt()
             iFramePage.switchToFacebookTab()
         then:
