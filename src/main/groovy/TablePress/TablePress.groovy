@@ -19,6 +19,10 @@ class TablePress extends Page{
 
     static url = "https://tablepress.org/demo"
 
+    void printParagraphBeforeTheTable() {
+        println("This is a demo table (with fictional data), that was created with the TablePress plugin")
+    }
+
     void assertTablePressInformationIsDisplayed() {
         assert tablePressInfo.text() != null
     }
@@ -27,9 +31,9 @@ class TablePress extends Page{
         assert tableRows.text() != null
     }
 
-    void printLastNames() {
+    void assertLastNamesAreDisplayed() {
         for (Navigator lastName : columnTwo) {
-            println(lastName.text())
+            assert lastName.text() != null
         }
     }
 }

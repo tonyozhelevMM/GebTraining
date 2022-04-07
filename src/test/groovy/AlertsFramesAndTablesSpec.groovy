@@ -93,8 +93,9 @@ class AlertsFramesAndTablesSpec extends BaseSpec {
             navigateToPage(TablePress.url)
             TablePress tablePress = at TablePress
         when:
-            tablePress.printLastNames()
+            tablePress.printParagraphBeforeTheTable()
         then:
+            tablePress.assertLastNamesAreDisplayed()
             tablePress.assertTablePressInformationIsDisplayed()
             tablePress.assertTableRowIsNotEmpty()
     }
