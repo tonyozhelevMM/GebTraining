@@ -19,10 +19,6 @@ class TablePress extends Page{
 
     static url = "https://tablepress.org/demo"
 
-    void printParagraphBeforeTheTable() {
-        println("This is a demo table (with fictional data), that was created with the TablePress plugin")
-    }
-
     void assertTablePressInformationIsDisplayed() {
         assert tablePressInfo.text() != null
     }
