@@ -1,4 +1,4 @@
-package demoqa
+package DemoQA
 
 import geb.Page
 import geb.module.DateInput

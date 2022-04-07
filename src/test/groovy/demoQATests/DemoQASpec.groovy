@@ -1,8 +1,8 @@
 package demoQATests
 
-import demoqa.BasePage
-import demoqa.FormsPage
-import demoqa.PracticeFormPage
+import DemoQA.BasePage
+import DemoQA.FormsPage
+import DemoQA.PracticeFormPage
 import regularlyUsed.BaseSpec
 
 class DemoQASpec extends BaseSpec {
