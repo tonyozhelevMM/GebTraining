@@ -22,6 +22,9 @@ class AmazonBasePage extends Page{
     }
 
     boolean isLoggedIn(String userName) {
+        waitFor {
+            ExpectedConditions.visibilityOf(navigationToolsAccountList as WebElement)
+        }
         return navigationToolsAccountList.text() == "Hello, " + userName
     }
 

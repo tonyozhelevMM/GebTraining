@@ -1,11 +1,10 @@
 package demoQATests
 
-import amazon.AmazonBasePage
 import demoqa.BasePage
 import demoqa.FormsPage
 import demoqa.PracticeFormPage
 
-class ExampleSpec extends BaseSpec {
+class DemoQASpec extends BaseSpec {
 
     void "navigateToPracticeFormPageTest"() {
         given: "User is on Base Page"
@@ -22,7 +21,7 @@ class ExampleSpec extends BaseSpec {
 
     void "fillOutFormTest"() {
         given: "User is on the Practice Form Page"
-            navigateToPracticeFormPage()
+            navigateToPage(PracticeFormPage.url)
             PracticeFormPage practiceFormPage = at PracticeFormPage
         when: "Fill out the form"
             practiceFormPage.fillInFirstNameField("Panayot")
