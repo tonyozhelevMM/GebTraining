@@ -1,3 +1,5 @@
+package alertsFramesAndTables
+
 import DemoQA.AlertsFramesAndWindowsPage
 import DemoQA.BasePage
 import DemoQA.BrowserWindowsPage
@@ -6,6 +8,7 @@ import DemoQA.PracticeFormPage
 import DemoQA.SelectMenuPage
 import IFrame.IFramePage
 import TablePress.TablePress
+import regularlyUsed.BaseSpec
 
 class AlertsFramesAndTablesSpec extends BaseSpec {
 
