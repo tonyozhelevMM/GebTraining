@@ -3,6 +3,7 @@ package DemoQA
 import geb.Page
 import geb.waiting.Wait
 import org.openqa.selenium.By
+import org.openqa.selenium.Keys
 
 class BasePage extends Page {
 
